@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Program
 {
@@ -45,29 +45,37 @@ namespace Program
                                 SpelarePoäng = SpelarePoäng + slump.Next(1, 11);
                                 Console.WriteLine("Du har " + SpelarePoäng + " poäng");
                                 Console.WriteLine("Datorn har " + DatorPoäng + " poäng");
-                                if (SpelarePoäng > 21)
-                                {
-                                    svar = "n";
-                                    DatorPoäng = DatorPoäng + slump.Next(1, 11);
-                                }
+                                
 
                             }
 
-                            
+                            if (SpelarePoäng > 21)
+                            {
+                                svar = "n";
+                                DatorPoäng = DatorPoäng + slump.Next(1, 11);
+                            }
+
 
                         } while (svar != "n");
 
-                                if (SpelarePoäng > DatorPoäng && SpelarePoäng <= 21)
-                                    Console.WriteLine("Du Vann!");
-                                else if (SpelarePoäng <= 21 && DatorPoäng <= 21 && DatorPoäng > SpelarePoäng)
-                                    Console.WriteLine("Du Förlorade!!");
+                        if (SpelarePoäng > DatorPoäng && SpelarePoäng <= 21)
+                            Console.WriteLine("Du Vann!");
 
-                                else if (SpelarePoäng<21 && DatorPoäng>21 )
-                                    Console.WriteLine("Du Förlorade!!");
+                        else if (SpelarePoäng <= 21 && DatorPoäng <= 21 && DatorPoäng > SpelarePoäng)
+                            Console.WriteLine("Du Förlorade!!");
 
-                                else if (SpelarePoäng > 21 && DatorPoäng > 21)
-                                    Console.WriteLine("Ingen Vann!");
+                        else if (SpelarePoäng > 21 && DatorPoäng < 21)
+                            Console.WriteLine("Du Förlorade!!");
 
+                        else if (DatorPoäng <21 && SpelarePoäng >21 )
+                            Console.WriteLine("Du Förlorade!!");
+
+                        else if (SpelarePoäng > 21 && DatorPoäng > 21)
+                            Console.WriteLine("Ingen Vann!");
+                        else
+                            Console.WriteLine("Skit i det");
+
+                        Console.WriteLine("\n");
                         break;
 
                     case "2":
